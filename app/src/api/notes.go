@@ -1,9 +1,10 @@
 package api
 
 import (
-	"github.com/labstack/echo"
 	"lfiapp/services"
 	"net/http"
+
+	"github.com/labstack/echo"
 )
 
 func GetNote(c echo.Context) error {
@@ -31,11 +32,11 @@ func CreateNote(c echo.Context) error {
 
 func ListNotes(c echo.Context) error {
 
-	note_list, err := services.ListNotes()
+	noteList, err := services.ListNotes()
 
 	if err != nil {
 		return c.String(http.StatusInternalServerError, "Failed to list notes")
 	}
 
-	return c.JSON(http.StatusOK, note_list)
+	return c.JSON(http.StatusOK, noteList)
 }

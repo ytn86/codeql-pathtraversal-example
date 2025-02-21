@@ -1,35 +1,36 @@
 package services
 
 import (
-	"github.com/google/uuid"
 	"io"
 	"log"
 	"os"
 	"path"
+
+	"github.com/google/uuid"
 )
 
 func ListNotes() ([]string, error) {
 
-	notes_path := "notes/"
-	files, err := os.ReadDir(notes_path)
+	notesPath := "notes/"
+	files, err := os.ReadDir(notesPath)
 	if err != nil {
 		return nil, err
 	}
 
-	var note_list []string
+	var noteList []string
 	for _, file := range files {
-		note_list = append(note_list, file.Name())
+		noteList = append(noteList, file.Name())
 	}
 
-	return note_list, nil
+	return noteList, nil
 }
 
 func GetNote(noteId string) ([]byte, error) {
 
-	note_path := path.Join("notes/", noteId)
-	log.Println(note_path)
+	notePath := path.Join("notes/", noteId)
+	log.Println(notePath)
 
-	fp, err := os.Open(note_path)
+	fp, err := os.Open(notePath)
 	if err != nil {
 		return nil, err
 	}
@@ -47,8 +48,8 @@ func GetNote(noteId string) ([]byte, error) {
 func CreateNote(content string) (string, error) {
 
 	noteId := uuid.New().String()
-	note_path := path.Join("notes/", noteId)
-	fp, err := os.Create(note_path)
+	notePath := path.Join("notes/", noteId)
+	fp, err := os.Create(notePath)
 	if err != nil {
 		return "", err
 	}
