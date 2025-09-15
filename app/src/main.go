@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/labstack/echo"
-	"lfiapp/routes"
+	"pathtravapp/routes"
 )
 
 func main() {

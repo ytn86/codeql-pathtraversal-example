@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/labstack/echo"
-	"lfiapp/api"
+	"pathtravapp/api"
 )
 
 func Router(e *echo.Echo) {

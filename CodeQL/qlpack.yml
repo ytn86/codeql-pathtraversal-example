@@ -1,4 +1,4 @@
-name: lfi-example
+name: pathtraversal-example
 version: 0.0.0
 dependencies:
   # This uses the latest version of the codeql/go-all library.

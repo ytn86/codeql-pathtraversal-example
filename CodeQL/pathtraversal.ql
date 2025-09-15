@@ -2,7 +2,7 @@
 /**
 
  * @kind path-problem
- * @id go/lfi
+ * @id go/pathtraversal
  * @severity error
 
  */
@@ -32,4 +32,4 @@ import MyFlow::PathGraph
 
 from DataFlow::Node source, DataFlow::Node sink
 where MyFlow::flow(source, sink)
-select sink.asExpr(), source, sink, "Potential Local File Inclusion (LFI) vulnerability detected $@.", sink, "here"
+select sink.asExpr(), source, sink, "Detected potential Path Traversal vulnerability."

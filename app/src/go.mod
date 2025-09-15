@@ -1,4 +1,4 @@
-module lfiapp
+module pathtravapp
 
 go 1.22.2
 

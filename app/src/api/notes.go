@@ -1,8 +1,8 @@
 package api
 
 import (
-	"lfiapp/services"
 	"net/http"
+	"pathtravapp/services"
 
 	"github.com/labstack/echo"
 )
